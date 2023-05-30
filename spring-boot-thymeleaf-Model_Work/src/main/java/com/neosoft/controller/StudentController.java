@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neosoft.entity.Student;
+import com.neosoft.entity.Software;
 import com.neosoft.service.StudentServiceImpl;
 
 @Controller
@@ -29,14 +29,14 @@ public class StudentController {
 	@GetMapping("/students/new")
 	public String createStudentForm(Model model) {
 		
-		Student student = new Student();
+		Software student = new Software();
 		model.addAttribute("student", student);
 		
 		return "create_student";
 	}
 	
 	@PostMapping("/students")
-	public String saveStudent(@ModelAttribute("student") Student student) {
+	public String saveStudent(@ModelAttribute("student") Software student) {
 		
 		studentServiceImpl.saveStudent(student);
 		
@@ -53,9 +53,9 @@ public class StudentController {
 	
 	@PostMapping("/students/{id}")
 	public String updateStudent(@PathVariable Long id, 
-			@ModelAttribute("student") Student student,	Model model) {
+			@ModelAttribute("student") Software student,	Model model) {
 		
-		Student existingStudent = studentServiceImpl.getStudentById(id);
+		Software existingStudent = studentServiceImpl.getStudentById(id);
 		existingStudent.setId(id);
 		existingStudent.setFirstName(student.getFirstName());
 		existingStudent.setLastName(student.getLastName());

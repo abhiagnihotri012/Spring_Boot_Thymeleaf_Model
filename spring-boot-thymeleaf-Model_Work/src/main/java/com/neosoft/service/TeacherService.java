@@ -2,17 +2,17 @@ package com.neosoft.service;
 
 import java.util.List;
 
-import com.neosoft.entity.Teacher;
+import com.neosoft.entity.Employee;
 
 public interface TeacherService {
 
-	List<Teacher> getAllTeachers();
+	List<Employee> getAllTeachers();
 	
-	Teacher saveTeacher(Teacher teacher);
+	Employee saveTeacher(Employee teacher);
 	
-	Teacher getTeacherById(Long id);
+	Employee getTeacherById(Long id);
 	
-	Teacher updateTeacher(Teacher teacher);
+	Employee updateTeacher(Employee teacher);
 	
 	void deleteTeacherById(Long id);
 }

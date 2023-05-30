@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.neosoft.entity.Teacher;
+import com.neosoft.entity.Employee;
 import com.neosoft.service.TeacherServiceImpl;
 
 @Controller
@@ -28,14 +28,14 @@ public class TeacherController {
 	@GetMapping("/teachers/new")
 	public String createteacherForm(Model model) {
 		
-		Teacher teacher = new Teacher();
+		Employee teacher = new Employee();
 		model.addAttribute("teacher", teacher);
 		
 		return "create_teacher";
 	}
 	
 	@PostMapping("/teachers")
-	public String saveteacher(@ModelAttribute("teacher") Teacher teacher) {
+	public String saveteacher(@ModelAttribute("teacher") Employee teacher) {
 		
 		TeacherServiceImpl.saveTeacher(teacher);
 		
@@ -52,9 +52,9 @@ public class TeacherController {
 	
 	@PostMapping("/teachers/{id}")
 	public String updateteacher(@PathVariable Long id, 
-			@ModelAttribute("teacher") Teacher teacher,	Model model) {
+			@ModelAttribute("teacher") Employee teacher,	Model model) {
 		
-		Teacher existingteacher = TeacherServiceImpl.getTeacherById(id);
+		Employee existingteacher = TeacherServiceImpl.getTeacherById(id);
 		existingteacher.setId(id);
 		existingteacher.setFirstName(teacher.getFirstName());
 		existingteacher.setLastName(teacher.getLastName());

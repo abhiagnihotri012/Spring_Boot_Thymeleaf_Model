@@ -2,17 +2,17 @@ package com.neosoft.service;
 
 import java.util.List;
 
-import com.neosoft.entity.Student;
+import com.neosoft.entity.Software;
 
 public interface StudentService {
 
-	List<Student> getAllStudents();
+	List<Software> getAllStudents();
 	
-	Student saveStudent(Student student);
+	Software saveStudent(Software student);
 	
-	Student getStudentById(Long id);
+	Software getStudentById(Long id);
 	
-	Student updateStudent(Student student);
+	Software updateStudent(Software student);
 	
 	void deleteStudentById(Long id);
 }

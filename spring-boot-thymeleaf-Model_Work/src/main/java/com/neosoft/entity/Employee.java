@@ -11,12 +11,12 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "students")
-public class Student {
+@Table(name = "employees")
+public class Employee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long id=0L;
 	
 	@Column(name = "first_name",nullable = false)
 	private String firstName;
@@ -24,8 +24,23 @@ public class Student {
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "email")
+	@Column(name = "mobile",nullable = false)
+	private Long mobile;
+	
+	@Column(name = "email",nullable = false)
 	private String email;
+	
+	@Column(name = "city")
+	private String city;
+	
+	@Column(name = "state")
+	private String state;
+	
+	@Column(name = "pincode")
+	private Long pincode;
+	
+	@Column(name = "desig")
+	private String designation;
 
 	public Long getId() {
 		return id;
@@ -51,6 +66,14 @@ public class Student {
 		this.lastName = lastName;
 	}
 
+	public Long getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -58,4 +81,32 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public Long getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(Long pincode) {
+		this.pincode = pincode;
+	}
+	
+	
+
+	
 }

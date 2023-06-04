@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.lang.NonNull;
+
 import lombok.Data;
 
 @Entity
@@ -18,16 +20,16 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id=0L;
 	
-	@Column(name = "first_name",nullable = false)
+	@Column(name = "first_name")
 	private String firstName;
 	
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "mobile",nullable = false)
+	@Column(name = "mobile")
 	private Long mobile;
 	
-	@Column(name = "email",nullable = false)
+	@Column(name = "email")
 	private String email;
 	
 	@Column(name = "city")
@@ -39,8 +41,16 @@ public class Employee {
 	@Column(name = "pincode")
 	private Long pincode;
 	
-	@Column(name = "desig")
+	@Column(name = "designation")
 	private String designation;
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
 
 	public Long getId() {
 		return id;

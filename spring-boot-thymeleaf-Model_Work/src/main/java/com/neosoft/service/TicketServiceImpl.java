@@ -29,6 +29,11 @@ public class TicketServiceImpl implements TicketService{
 	}
 
 	@Override
+	public List<Ticket> findByJiraId(String jiraId) {
+		return ticketRepository.findByJiraId(jiraId);
+	}
+
+	@Override
 	public Ticket updateTicket(Ticket ticket) {		
 		return ticketRepository.save(ticket);
 	}

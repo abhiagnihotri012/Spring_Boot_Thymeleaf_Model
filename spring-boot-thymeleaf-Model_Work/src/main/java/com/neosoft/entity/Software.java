@@ -11,51 +11,59 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "software")
+
 public class Software {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long softwareId;
-	
-	@Column(name = "softName",nullable = false)
-	private String softName;
-	
-	@Column(name = "client")
+		private String softName;
 	private String client;
+		private String company;
+		private String location;
 	
-	@Column(name = "email")
-	private String email;
-
-	public Long getId() {
-		return softwareId;
-	}
-
-	public void setId(Long id) {
-		this.softwareId = id;
-	}
-
-	public String getFirstName() {
-		return softName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.softName = firstName;
-	}
-
-	public String getLastName() {
-		return client;
-	}
-
-	public void setLastName(String lastName) {
-		this.client = lastName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+		private String projectManager;
+		public Long getSoftwareId() {
+			return softwareId;
+		}
+		public void setSoftwareId(Long softwareId) {
+			this.softwareId = softwareId;
+		}
+		public String getSoftName() {
+			return softName;
+		}
+		public void setSoftName(String softName) {
+			this.softName = softName;
+		}
+		public String getClient() {
+			return client;
+		}
+		public void setClient(String client) {
+			this.client = client;
+		}
+		public String getCompany() {
+			return company;
+		}
+		public void setCompany(String company) {
+			this.company = company;
+		}
+		public String getLocation() {
+			return location;
+		}
+		public void setLocation(String location) {
+			this.location = location;
+		}
+		
+		
+		public String getProjectManager() {
+			return projectManager;
+		}
+		public void setProjectManager(String projectManager) {
+			this.projectManager = projectManager;
+		}
+		
+		
+	
+	
+	
 }

@@ -12,6 +12,8 @@ public interface TicketService {
 	
 	Ticket getTicketById(Long id);
 	
+	List<Ticket> findByJiraId(String jiraId);
+	
 	Ticket updateTicket(Ticket ticket);
 	
 	void deleteTicketById(Long id);

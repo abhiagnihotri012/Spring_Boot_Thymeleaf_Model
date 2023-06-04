@@ -50,6 +50,7 @@ public class ScrumMasterController {
 		return scrumMasterServiceImpl.getScrumMasterByUserName(username);
 	}
 	
+	
 	@PostMapping("/scrummasters/{id}")
 	public void updateScrumMaster(@PathVariable String username, 
 			@RequestBody ScrumMaster scrumMaster) {
